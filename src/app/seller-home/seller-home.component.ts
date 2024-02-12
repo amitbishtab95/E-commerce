@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { product } from '../data-types';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-seller-home',
@@ -6,5 +8,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./seller-home.component.scss']
 })
 export class SellerHomeComponent {
+  productList: undefined | product[];
+  productMessage: undefined | string;
+  icon = faTrash;
+  iconEdit=faEdit;
+  constructor(private product: ProductService) {}
 
+  ngOnInit(): void {
+    this.list();
+  }
+
+  deleteProduct(id: number) {
+    this.product.deleteProduct(id).subscribe((result) => {
+      if (result) {
+        this.productMessage = 'Product is deleted';
+        this.list();
+      }
+    });
+    setTimeout(() => {
+      this.productMessage = undefined;
+    }, 3000);
+  }
+
+  list() {
+    this.product.productList().subscribe((result) => {
+      if (result) {
+        this.productList = result;
+      }
+    });
+  }
 }
