@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { product } from '../data-types';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-header',

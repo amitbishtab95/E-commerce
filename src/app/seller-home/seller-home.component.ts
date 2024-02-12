@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { product } from '../data-types';
 import { ProductService } from '../services/product.service';
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-seller-home',
