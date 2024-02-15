@@ -13,6 +13,7 @@ import { SellerAddProductComponent } from './seller-add-product/seller-add-produ
 import { SellerProductListComponent } from './seller-product-list/seller-product-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
