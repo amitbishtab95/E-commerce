@@ -65,7 +65,7 @@ export class HeaderComponent {
       this.product.searchProduct(element.value).subscribe((result)=>{
        
         if(result.length>5){
-          result.length=length
+          result.length=5;
         }
         this.searchResult=result;
       })
